@@ -1,0 +1,63 @@
+# Varbase Page Base
+
+A recipe to provide a Page content type for Varbase, with specific features including SEO fields, editorial workflow, and menu configuration.
+
+## Features
+
+### Page Content Type
+- **Utility page** (`page`): A content type for static pages with the following fields:
+  - Title
+  - Description (short summary text, required)
+  - Featured Image (media reference)
+  - Content (long text with format)
+  - Tags (taxonomy reference with autocomplete via Tagify)
+
+
+### URL Patterns
+- **Pathauto**: Automatic URL aliases following the pattern `/[node:title]`
+
+### Editorial Workflow
+- Page content type is integrated with the Varbase Editorial Workflow for content moderation (draft, review, published, archived) and scheduled publishing
+
+## Dependencies
+
+This recipe depends on the following recipes:
+- **drupal_cms_content_type_base**: Canvas, CKEditor, field storages, text formats, linkit, scheduler, trash, autosave, ECA rules
+- **varbase_content_base**: Core content structure, field storages, and content management tools
+- **varbase_media_base**: Media library, image handling, and media types
+- **varbase_seo_base**: Metatag, Pathauto, Yoast SEO, and SEO tools
+- **varbase_workflow_base**: Editorial workflow, content moderation, and scheduler
+
+## Permissions
+
+The recipe configures page content permissions for:
+- **Content Editor**: Create, edit, delete, and manage revisions of page content
+
+## Installation
+
+Add the recipe using composer:
+```
+composer require drupal/varbase_page_base:~1.0.0
+```
+
+Change directory to `/web` or `/docroot`
+
+Run the Drupal recipe bash script:
+```
+bash core/scripts/drupal recipe recipes/varbase_page_base
+```
+
+or
+
+Run the Drush recipe command:
+```
+drush recipe ../recipes/varbase_page_base
+```
+
+## Maintainers
+
+- [Vardot](https://www.drupal.org/vardot)
+
+## License
+
+GPL-2.0-or-later

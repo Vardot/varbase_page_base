@@ -1,0 +1,35 @@
+name: Varbase Page Base
+description: A recipe to provide a Page content type for Varbase, with specific features including SEO fields, editorial workflow, and menu configuration.
+type: Varbase Page
+recipes:
+  - drupal_cms_content_type_base
+  - varbase_content_base
+  - varbase_media_base
+  - varbase_seo_base
+  - varbase_workflow_base
+config:
+  strict: false
+  actions:
+    # Allow basic pages to go into the main menu, or the footer.
+    node.type.page:
+      setThirdPartySettings:
+        -
+          module: menu_ui
+          key: available_menus
+          value:
+            - main
+            - footer
+        -
+          module: menu_ui
+          key: parent
+          value: 'main:'
+    user.role.content_editor:
+      grantPermissions:
+        - 'create page content'
+        - 'delete page revisions'
+        - 'delete any page content'
+        - 'edit any page content'
+        - 'revert page revisions'
+        - 'view page revisions'
+    workflows.workflow.varbase_editorial_workflow:
+      addNodeTypes: ['page']

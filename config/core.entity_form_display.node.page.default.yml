@@ -13,8 +13,10 @@ dependencies:
     - node.type.page
     - workflows.workflow.varbase_editorial_workflow
   module:
+    - advanced_text_formatter
     - content_moderation
     - field_group
+    - length_indicator
     - media_library
     - path
     - scheduler
@@ -49,7 +51,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -121,6 +123,7 @@ content:
       show_entity_id: 0
       show_info_label: 0
       info_label: ''
+      parent_selection: 1
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
@@ -130,13 +133,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 17
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -164,16 +167,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 18
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -185,10 +193,18 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      length_indicator:
+        indicator: true
+        indicator_opt:
+          optimin: 15
+          optimax: 50
+          tolerance: 10
+      advanced_text_formatter:
+        show_token_tree: 0
   uid:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS

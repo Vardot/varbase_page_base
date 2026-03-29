@@ -26,7 +26,7 @@ third_party_settings:
 name: 'Utility page'
 type: page
 description: "Use <em>utility page</em> for your static content, such as a 'Privacy policy' page."
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

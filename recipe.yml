@@ -10,6 +10,12 @@ recipes:
 config:
   strict: false
   actions:
+    user.role.anonymous:
+      grantPermissions:
+        - 'access_unpublished node page'
+    user.role.authenticated:
+      grantPermissions:
+        - 'access_unpublished node page'
     # Allow basic pages to go into the main menu, or the footer.
     node.type.page:
       setThirdPartySettings:

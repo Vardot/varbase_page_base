@@ -1,3 +1,5 @@
+[![Varbase](https://raw.githubusercontent.com/Vardot/varbase/11.0.x/images/varbase-logo.png)](https://www.drupal.org/project/varbase)
+
 # Varbase Page Base
 
 A recipe to provide a Page content type for Varbase, with specific features including SEO fields, editorial workflow, and menu configuration.

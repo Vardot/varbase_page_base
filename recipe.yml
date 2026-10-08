@@ -2,13 +2,16 @@ name: Varbase Page Base
 description: A recipe to provide a Page content type for Varbase, with specific features including SEO fields, editorial workflow, and menu configuration.
 type: Varbase Page
 recipes:
-  - drupal_cms_content_type_base
-  - varbase_content_base
   - varbase_media_base
+  - varbase_editor_base
+  - varbase_content_base
   - varbase_seo_base
   - varbase_workflow_base
 config:
   strict: false
+  import:
+    system:
+      - system.menu.footer
   actions:
     user.role.anonymous:
       grantPermissions:

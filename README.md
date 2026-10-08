@@ -24,12 +24,15 @@ A recipe to provide a Page content type for Varbase, with specific features incl
 ### Editorial Workflow
 - Page content type is integrated with the Varbase Editorial Workflow for content moderation (draft, review, published, archived) and scheduled publishing
 
+### Privacy policy
+- An unpublished Privacy policy page at `/privacy-policy`, linked from the footer menu, ready to edit before publishing
+
 ## Dependencies
 
 This recipe depends on the following recipes:
-- **drupal_cms_content_type_base**: Canvas, CKEditor, field storages, text formats, linkit, scheduler, trash, autosave, ECA rules
-- **varbase_content_base**: Core content structure, field storages, and content management tools
 - **varbase_media_base**: Media library, image handling, and media types
+- **varbase_editor_base**: Text formats, CKEditor and Linkit
+- **varbase_content_base**: Core content structure, field storages, the basic editorial workflow, Canvas, scheduler, trash, autosave and ECA rules
 - **varbase_seo_base**: Metatag, Pathauto, Yoast SEO, and SEO tools
 - **varbase_workflow_base**: Editorial workflow, content moderation, and scheduler
 
